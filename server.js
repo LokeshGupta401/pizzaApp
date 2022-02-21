@@ -11,17 +11,27 @@ const PORT=process.env.PORT || 3000
 
 app.use(express.static('public'))
 
+app.use(expressLayout)
+
+// console.log(path.join(__dirname,'/resources/views'))
+app.set('views',path.join(__dirname,'/resources/views'))
+app.set('view engine','ejs')
 
 app.get('/',(req,res)=>{
 
     res.render('home')
 })
 
-app.use(expressLayout)
+app.get('/cart',(req,res)=>{
+    res.render('customers/cart.ejs')
+})
 
-// console.log(path.join(__dirname,'/resources/views'))
-app.set('views',path.join(__dirname,'/resources/views'))
-app.set('view engine','ejs')
+app.get('/login',(req,res)=>{
+    res.render('auth/login.ejs')
+})
+app.get('/register',(req,res)=>{
+    res.render('auth/register.ejs')
+})
 
 app.listen(PORT,()=>{
 
