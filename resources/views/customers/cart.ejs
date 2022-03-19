@@ -27,6 +27,7 @@
         <span class="text-lg font-bold"> Total Amount : </span>
         <span class="amount text-2xl font-bold ml-2"> 300</span>
       </div>
+      <% if(user){ %> 
       <div class="text-right">
         <form action="" class="mt-12">
           <input
@@ -49,12 +50,14 @@
           </div>
         </form>
       </div>
+      <% }else{ %> 
       <a
         href=""
         class="inline-block cursor-pointer px-6 btn-primary px-2 py-2 rounded-full text-white font-bold mt-6"
       >
         Login to continue</a
       >
+      <% } %> 
     </div>
   </div>
   <% }else{ %> 
